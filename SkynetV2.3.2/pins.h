@@ -174,6 +174,8 @@
   #include "pins_SAINSMART_2IN1.h"
 #elif MB(ANET_10)
   #include "pins_ANET_10.h"
+#elif MB(ZRIB_2)
+  #include "pins_ZRIB_2.h"
 #else
   #error "Unknown MOTHERBOARD value set in Configuration.h"
 #endif
