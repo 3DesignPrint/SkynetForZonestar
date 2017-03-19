@@ -20,34 +20,19 @@
  *
  */
 
-/**
- * Arduino Mega with RAMPS v1.3 pin assignments
- *
- * Applies to the following boards:
- *
- *  RAMPS_13_EFB (Extruder, Fan, Bed)
- *  RAMPS_13_EEB (Extruder, Extruder, Bed)
- *  RAMPS_13_EFF (Extruder, Fan, Fan)
- *  RAMPS_13_EEF (Extruder, Extruder, Fan)
- *  RAMPS_13_SF  (Spindle, Controller Fan)
- *
- */
 
 #if HOTENDS > 2
   #error "Zrib v2 supports up to 2 hotends. Comment this line to keep going."
 #endif
 
-#ifndef BOARD_NAME
-  #define BOARD_NAME "ZRIB v2.x"
-  #define IS_RAMPS_EFB
-#endif
-
-#define MOSFET_D_PIN 6  //FAN_1_PIN
+#define BOARD_NAME "ZRIB v2.x"
 
 #include "pins_RAMPS.h"
 
+#undef FAN1_PIN
+#define FAN1_PIN 6
+
 #if HOTENDS == 2
-  //#FAN_1_PIN MOSFET_D_PIN
   #undef HEATER_1_PIN
   #define HEATER_1_PIN 7
 #endif
@@ -56,6 +41,11 @@
 #ifdef Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
   #undef Z_MIN_PIN  
   #define Z_MIN_PIN 19
+#endif
+
+#ifdef FILAMENT_RUNOUT_SENSOR
+  #undef FIL_RUNOUT_PIN
+  #define FIL_RUNOUT_PIN 15 //Y_MAX_PIN
 #endif
 
 //Definition for Zonestar keypad LCD
