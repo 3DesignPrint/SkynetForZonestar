@@ -49,7 +49,7 @@
 #if HOTENDS == 2
   //#FAN_1_PIN MOSFET_D_PIN
   #undef HEATER_1_PIN
-  #HEATER_1_PIN 7
+  #define HEATER_1_PIN 7
 #endif
 
 //switch Z_MIN_ZMAX and Z_MAX_PIN for auto bed leveling
