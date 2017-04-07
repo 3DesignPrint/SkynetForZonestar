@@ -29,8 +29,8 @@
 
 #include "pins_RAMPS.h"
 
-#undef FAN1_PIN
-#define FAN1_PIN 6
+#undef FAN_PIN
+#define FAN_PIN 9 //Define the part cooling fan 
 
 #if HOTENDS == 2
   #undef HEATER_1_PIN
